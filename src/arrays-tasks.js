@@ -621,10 +621,10 @@ function propagateItemsByPositionIndex(arr) {
 function shiftArray(arr, n) {
   let outputArr = [];
   if (n >= 0) {
-    outputArr = arr.toSpliced(0, n + 1);
+    outputArr = arr.slice(n + 1);
     outputArr.splice(outputArr.length, 0, ...arr.slice(0, n + 1));
   } else {
-    outputArr = arr.toSpliced(0, Math.abs(n));
+    outputArr = arr.slice(Math.abs(n));
     outputArr.splice(outputArr.length, 0, ...arr.slice(0, Math.abs(n)));
   }
   return outputArr;
